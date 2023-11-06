@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Planet1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/towerButton_hover.png" type="Texture" id=3]
+[ext_resource path="res://Assets/towerButton.png" type="Texture" id=4]
+[ext_resource path="res://Assets/towerbutton_pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Stage1.png" type="Texture" id=6]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 72.0
+
+[sub_resource type="Curve2D" id=3]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8, 240, 0, 0, 0, 0, 48, 216, 0, 0, 0, 0, 48, 216, 0, 0, 0, 0, 104, 184, 0, 0, 0, 0, 144, 160, 0, 0, 0, 0, 184, 144, 0, 0, 0, 0, 248, 128, 0, 0, 0, 0, 296, 112, 0, 0, 0, 0, 360, 96, 0, 0, 0, 0, 424, 88, 0, 0, 0, 0, 496, 80, 0, 0, 0, 0, 560, 80, 0, 0, 0, 0, 592, 80, 0, 0, 0, 0, 680, 96, 0, 0, 0, 0, 720, 104, 0, 0, 0, 0, 720, 104, 0, 0, 0, 0, 752, 112, 0, 0, 0, 0, 792, 128, 0, 0, 0, 0, 832, 152, 0, 0, 0, 0, 832, 152, 0, 0, 0, 0, 872, 176, 0, 0, 0, 0, 872, 176, 0, 0, 0, 0, 904, 216, 0, 0, 0, 0, 920, 240, 0, 0, 0, 0, 928, 280, 0, 0, 0, 0, 920, 352, 0, 0, 0, 0, 904, 384, 0, 0, 0, 0, 872, 432, 0, 0, 0, 0, 848, 456, 0, 0, 0, 0, 808, 488, 0, 0, 0, 0, 768, 504, 0, 0, 0, 0, 720, 512, 0, 0, 0, 0, 720, 512, 0, 0, 0, 0, 656, 520, 0, 0, 0, 0, 592, 528, 0, 0, 0, 0, 592, 528, 0, 0, 0, 0, 496, 520, 0, 0, 0, 0, 496, 520, 0, 0, 0, 0, 448, 512, 0, 0, 0, 0, 416, 496, 0, 0, 0, 0, 392, 472, 0, 0, 0, 0, 360, 440, 0, 0, 0, 0, 336, 416, 0, 0, 0, 0, 328, 376, 0, 0, 0, 0, 320, 328, 0, 0, 0, 0, 328, 288, 0, 0, 0, 0, 352, 256, 0, 0, 0, 0, 384, 232, 0, 0, 0, 0, 424, 216, 0, 0, 0, 0, 472, 208, 0, 0, 0, 0, 504, 216, 0, 0, 0, 0, 520, 232, 0, 0, 0, 0, 528, 248 )
+}
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Ui" type="Sprite" parent="."]
+position = Vector2( 504, 304 )
+texture = ExtResource( 6 )
+
+[node name="WaveTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="CashLabel" type="Label" parent="GUI"]
+margin_left = 800.0
+margin_top = 40.0
+margin_right = 928.0
+margin_bottom = 64.0
+align = 1
+
+[node name="Button1" type="TextureButton" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -88.0
+margin_top = -176.0
+margin_right = -48.0
+margin_bottom = -136.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 5 )
+
+[node name="Planet1" type="Area2D" parent="." groups=["Planet1"]]
+
+[node name="Sprite" type="Sprite" parent="Planet1"]
+position = Vector2( 509.5, 319.5 )
+scale = Vector2( 0.266, 0.258 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet1"]
+position = Vector2( 512, 320 )
+shape = SubResource( 2 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 3 )
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="pressed" from="GUI/Button1" to="." method="_on_TextureButton_pressed"]

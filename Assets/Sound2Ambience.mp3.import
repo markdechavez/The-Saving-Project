@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sound2Ambience.mp3-96a76b9d3511222e5f4b36e09ad0e192.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound2Ambience.mp3"
+dest_files=[ "res://.import/Sound2Ambience.mp3-96a76b9d3511222e5f4b36e09ad0e192.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

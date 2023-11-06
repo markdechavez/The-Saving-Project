@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Assets/towerButton_hover.png" type="Texture" id=1]
+[ext_resource path="res://Assets/towerbutton_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/towerButton.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Stage2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Planet3.png" type="Texture" id=5]
+[ext_resource path="res://Game2.gd" type="Script" id=6]
+[ext_resource path="res://Assets/towerButton_hover2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/towerButton2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/towerbutton_pressed2.png" type="Texture" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 68.352
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 312, -16, 0, 0, 0, 0, 304, 32, 0, 0, 0, 0, 224, 112, 0, 0, 0, 0, 184, 120, 0, 0, 0, 0, 184, 120, 0, 0, 0, 0, 88, 128, 0, 0, 0, 0, -32, 128, 0, 0, 0, 0, -32, 128, 0, 0, 0, 0, -208, 304, 0, 0, 0, 0, -8, 640, 0, 0, 0, 0, 176, 648, 0, 0, 0, 0, 288, 632, 0, 0, 0, 0, 320, 568, 0, 0, 0, 0, 352, 552, 0, 0, 0, 0, 400, 528, 0, 0, 0, 0, 448, 496, 0, 0, 0, 0, 496, 480, 0, 0, 0, 0, 544, 464, 0, 0, 0, 0, 672, 432, 0, 0, 0, 0, 712, 408, 0, 0, 0, 0, 760, 392, 0, 0, 0, 0, 848, 344, 0, 0, 0, 0, 848, 344, 0, 0, 0, 0, 912, 304, 0, 0, 0, 0, 992, 256, 0, 0, 0, 0, 1040, 224, 0, 0, 0, 0, 1040, 224, 0, 0, 0, 0, 1072, 56, 0, 0, 0, 0, 1048, -64, 0, 0, 0, 0, 784, -56, 0, 0, 0, 0, 752, 16, 0, 0, 0, 0, 712, 48, 0, 0, 0, 0, 656, 80, 0, 0, 0, 0, 592, 112, 0, 0, 0, 0, 520, 144, 0, 0, 0, 0, 464, 168, 0, 0, 0, 0, 288, 208, 0, 0, 0, 0, 288, 208, 0, 0, 0, 0, 200, 232, 0, 0, 0, 0, 200, 232, 0, 0, 0, 0, 136, 232, 0, 0, 0, 0, 24, 232, 0, 0, 0, 0, -16, 248, 0, 0, 0, 0, -16, 608, 0, 0, 0, 0, -16, 608, 0, 0, 0, 0, 288, 608, 0, 0, 0, 0, 328, 536, 0, 0, 0, 0, 368, 504, 0, 0, 0, 0, 416, 488, 0, 0, 0, 0, 448, 480, 0, 0, 0, 0, 488, 464, 0, 0, 0, 0, 608, 408, 0, 0, 0, 0, 608, 408, 0, 0, 0, 0, 656, 392, 0, 0, 0, 0, 704, 376, 0, 0, 0, 0, 760, 352, 0, 0, 0, 0, 808, 336, 0, 0, 0, 0, 896, 256, 0, 0, 0, 0, 896, 256, 0, 0, 0, 0, 896, 224, 0, 0, 0, 0, 880, 152, 0, 0, 0, 0, 832, 136, 0, 0, 0, 0, 752, 112, 0, 0, 0, 0, 752, 112, 0, 0, 0, 0, 600, 56, 0, 0, 0, 0, 600, 56, 0, 0, 0, 0, 552, 32, 0, 0, 0, 0, 440, -24, 0, 0, 0, 0, 384, -24, 0, 0, 0, 0, -56, -16, 0, 0, 0, 0, -32, 64, 0, 0, 0, 0, 24, 112, 0, 0, 0, 0, 56, 136, 0, 0, 0, 0, 88, 160, 0, 0, 0, 0, 144, 184, 0, 0, 0, 0, 208, 208, 0, 0, 0, 0, 264, 232, 0, 0, 0, 0, 304, 256, 0, 0, 0, 0, 360, 288, 0, 0, 0, 0, 488, 376, 0, 0, 0, 0, 528, 392, 0, 0, 0, 0, 528, 392, 0, 0, 0, 0, 560, 408, 0, 0, 0, 0, 616, 440, 0, 0, 0, 0, 640, 456, 0, 0, 0, 0, 664, 472, 0, 0, 0, 0, 768, 536, 0, 0, 0, 0, 848, 624, 0, 0, 0, 0, 1048, 624, 0, 0, 0, 0, 1056, 584, 0, 0, 0, 0, 1056, 584, 0, 0, 0, 0, 968, 536, 0, 0, 0, 0, 928, 520, 0, 0, 0, 0, 880, 488, 0, 0, 0, 0, 824, 432, 0, 0, 0, 0, 760, 400, 0, 0, 0, 0, 696, 352, 0, 0, 0, 0, 640, 312, 0, 0, 0, 0, 600, 280, 0, 0, 0, 0, 520, 200, 0, 0, 0, 0, 520, 200, 0, 0, 0, 0, 448, 152, 0, 0, 0, 0, 376, 152, 0, 0, 0, 0, 360, 184, 0, 0, 0, 0, 360, 208, 0, 0, 0, 0, 384, 240, 0, 0, 0, 0, 464, 296 )
+}
+
+[node name="Game2" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="UI" type="Sprite" parent="."]
+position = Vector2( 512, 304 )
+texture = ExtResource( 4 )
+
+[node name="WaveTimer" type="Timer" parent="."]
+
+[node name="MobTimer" type="Timer" parent="."]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="CashLabel" type="Label" parent="GUI"]
+margin_left = 800.0
+margin_top = 32.0
+margin_right = 936.0
+margin_bottom = 70.0
+align = 1
+
+[node name="Button1" type="TextureButton" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -176.0
+margin_right = -40.0
+margin_bottom = -136.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+
+[node name="Button2" type="TextureButton" parent="GUI"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -248.0
+margin_right = -40.0
+margin_bottom = -208.0
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["Planet2"]]
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( 512, 296 )
+scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 512, 296 )
+shape = SubResource( 1 )
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[connection signal="timeout" from="WaveTimer" to="." method="_on_WaveTimer_timeout"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
+[connection signal="pressed" from="GUI/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="GUI/Button2" to="." method="_on_Button2_pressed"]
